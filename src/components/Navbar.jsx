@@ -12,20 +12,28 @@ const Navbar = () => {
 
 
   return (
-    <div className='flex items-center justify-between px-6 py-3'>
+    <div className='py-3 flex items-center justify-between px-6 '>
       {/* logo */}
       <img src={logo} alt="logo" className='h-15 w-45' />
 
       {/* Navbar links */}
-      <nav className='flex gap-12 text-2sm font-semibold text-green-950'>
-        <NavLink to={'/'} >Home</NavLink>
-        <NavLink to={'/features'} >Features</NavLink>
-        <NavLink to={'/about'} >About</NavLink>
-        <NavLink to={'/contact'} >Contact</NavLink>
+      <nav className='flex gap-3 text-2sm font-semibold items-center text-[#012725] '>
+        <NavLink to={'/'} className={({isActive}) => {
+          return `py-2 px-5 rounded-xl transition-all duration-300 ${isActive ? 'bg-[#012725] text-[#F7F3EA]': 'hover:bg-[#012725] hover:text-[#F7F3EA]'}`
+        }} >Home</NavLink>
+        <NavLink to={'/features'} className={({isActive}) => {
+          return `py-2 px-5 rounded-xl transition-all duration-300 ${isActive ? 'bg-[#012725] text-[#F7F3EA]': 'hover:bg-[#012725] hover:text-[#F7F3EA]'}`
+        }}>Features</NavLink>
+        <NavLink to={'/about'} className={({isActive}) => {
+          return `py-2 px-5 rounded-xl transition-all duration-300 ${isActive ? 'bg-[#012725] text-[#F7F3EA]': 'hover:bg-[#012725] hover:text-[#F7F3EA]'}`
+        }} >About</NavLink>
+        <NavLink to={'/contact'} className={({isActive}) => {
+          return `py-2 px-5 rounded-xl transition-all duration-300 ${isActive ? 'bg-[#012725] text-[#F7F3EA]': 'hover:bg-[#012725] hover:text-[#F7F3EA]'}`
+        }} >Contact</NavLink>
       </nav>
 
       {/* login button */}
-      <Button text={'Login'} handleClick={navigateToLogin} className='px-6 py-1.5' />
+      <Button text={'Login'} handleClick={navigateToLogin} className='px-6 py-1.5 transition-all duration-300 hover:bg-[#023835]'/>
     </div>
   )
 }
