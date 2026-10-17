@@ -55,7 +55,7 @@ const Home = () => {
       {/* bottom feature list */}
       <div className='flex justify-center items-center'>
 
-        <div className=' flex w-[55%] h-fit items-center justify-between text-sm font-semibold mt-8'>
+        <div className=' flex w-[55%] h-fit items-center text-[#012725] justify-between text-sm font-semibold mt-8'>
         {
           features.map((feature)=>(
             <div className='flex gap-1 items-center '>
