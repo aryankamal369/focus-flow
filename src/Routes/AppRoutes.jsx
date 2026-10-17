@@ -41,6 +41,10 @@ const AppRoutes = () => {
             element: <LandingPage/>,
             children: [
             {
+                index: true,
+                element: <Dashboard />
+            },
+            {
                 path: 'dashboard',
                 element: <Dashboard />
             },
@@ -77,8 +81,14 @@ const AppRoutes = () => {
             <Route key={route.path} path={route.path} element={route.element} >
 
               {route.children?.map((child) => (
-                <Route key={child.path} path={child.path} element={child.element} />
-              ))}
+  <Route
+    key={child.path || 'index'}
+    {...(child.index
+      ? { index: true }
+      : { path: child.path })}
+    element={child.element}
+  />
+))}
               
             </Route>
           ))}

@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../assets/logoWhite.png'
 import SidebarLinks from './SidebarLinks'
 import { AlarmClockCheck, ChartNoAxesCombined, CircleCheckBig, Goal, NotepadText, Settings } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const Sidebar = () => {
 
@@ -40,12 +41,17 @@ const Sidebar = () => {
     ]
     
 
+    const navigate = useNavigate();
+    const navigateToHomePage = ()=>{
+        navigate('/');
+    }
+
 
   return (
     <div className='flex-1 bg-[#012725] shadow-lg text-white px-6 py-3'>
 
        {/* logo  */}
-       <img src={logo} alt="logo" className='h-15 w-45' /> 
+       <img src={logo} alt="logo" className='h-15 w-45' onClick={navigateToHomePage} /> 
 
         {/* Sidebar Links */}
         <nav className='flex flex-col gap-1 text-lg mt-10'>
