@@ -48,7 +48,7 @@ const Sidebar = () => {
 
 
   return (
-    <div className='flex-1 bg-[#012725] shadow-lg text-white px-6 py-3'>
+    <div className='flex flex-col bg-[#012725] w-[17vw] shadow-lg text-white px-6 py-3'>
 
        {/* logo  */}
        <img src={logo} alt="logo" className='h-15 w-45' onClick={navigateToHomePage} /> 
